@@ -1,3 +1,6 @@
+  
+  <div data-sly-use.model= com.adobe.aem.may.batch.core.models.DemoModel>
    ${model.articleTitle} <br>
    ${model.articleDes}  <br>
    ${model.articleNum}
+</div>
