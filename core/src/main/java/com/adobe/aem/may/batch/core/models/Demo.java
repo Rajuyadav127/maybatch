@@ -1,8 +1,8 @@
 package com.adobe.aem.may.batch.core.models;
 
 public interface Demo {
-    public String getArticleText();
+    public String getArticleTitle();
     public String  getArticleDes();
-    public int getArticlenum();
+    public int getArticleNum();
 
 }
