@@ -1,0 +1,32 @@
+
+<div data-sly-use.model="com.adobe.aem.may.batch.core.models.RajParent">
+
+    ${model.text} <br>
+    ${model.des} <br>
+    ${model.num} <br>
+
+    <div data-sly-list.item="${model.bookdetailswithmap}">
+        <h2>${item.bookname}</h2> <br>
+        <h2>${item.booksubject}</h2> <br>
+
+        <h2> <div>${ 'yyyy-MM-dd HH:mm' @format=item.bookpublishdate, timezone='UTC'}</div></h2>
+
+
+         <div data-sly-list.item1=${item.bookdetailswithwriter}>
+
+
+             ${item1.writername}  <br>
+             ${item1.writernumber} <br>
+             <h2> <div>${ 'yyyy-MM-dd HH:mm' @format=item1.writerdod, timezone='UTC'}</div></h2>
+
+
+
+         </div>
+
+
+
+
+
+    </div>
+
+</div>
