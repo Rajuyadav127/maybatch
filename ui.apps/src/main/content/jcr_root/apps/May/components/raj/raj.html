@@ -1,30 +1,38 @@
+<head data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+
+<!--/* for css+js */-->
+<meta data-sly-call="${clientLib.all @ categories='clientlib-raj'}" data-sly-unwrap></meta>
+
+
 
 <div data-sly-use.model="com.adobe.aem.may.batch.core.models.RajParent">
 
     ${model.text} <br>
     ${model.des} <br>
     ${model.num} <br>
+     <h1>PageName:${model.articleTitle}<br></h1>
+     <h1>PagePath:${model.articlepagepath}<br></h1>
+     <h2>UserId:${model.webContentNode}</h2>
+
+
 
     <div data-sly-list.item="${model.bookdetailswithmap}">
-        <h2>${item.bookname}</h2> <br>
-        <h2>${item.booksubject}</h2> <br>
+          <h2 class="booktitle"> ${item.bookname}</h2> <br>
+          <h2 class="booksubject"> ${item.booksubject}</h2> <br>
 
-        <h2> <div>${ 'yyyy-MM-dd HH:mm' @format=item.bookpublishdate, timezone='UTC'}</div></h2>
-
-
-         <div data-sly-list.item1=${item.bookdetailswithwriter}>
+          <h2 class="bookdate"><div>${ 'yyyy-MM-dd HH:mm' @format=item.bookpublishdate, timezone='UTC'}</div></h2>
 
 
-             ${item1.writername}  <br>
-             ${item1.writernumber} <br>
-             <h2> <div>${ 'yyyy-MM-dd HH:mm' @format=item1.writerdod, timezone='UTC'}</div></h2>
+        <div data-sly-list.item1=${item.bookdetailswithwriter}>
 
 
-
-         </div>
+                 ${item1.writername}  <br>
+                 ${item1.writernumber} <br>
+                  <h2> <div>${ 'yyyy-MM-dd HH:mm' @format=item1.writerdob, timezone='UTC'}</div></h2>
 
 
 
+        </div>
 
 
     </div>
